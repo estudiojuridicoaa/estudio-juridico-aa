@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#14243a">
+  <meta name="description" content="Estudio Jurídico Integral AA. Asesoramiento en derecho laboral, familiar, penal, civil y comercial. Consultas por WhatsApp.">
+  <title>Estudio Jurídico Integral AA | Asesoramiento legal</title>
+  <style>
+    :root {
+      --navy: #14243a;
+      --navy-2: #1d334f;
+      --gold: #c6a66b;
+      --gold-light: #ead9b8;
+      --ink: #202b39;
+      --muted: #667386;
+      --paper: #fbfaf7;
+      --white: #fff;
+      --line: #e6e8ec;
+      --green: #218c62;
+      --shadow: 0 18px 50px rgba(20,36,58,.10);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink); background: var(--paper); line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    .container { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+    .topbar { background: var(--navy); color: #e7edf5; font-size: .88rem; }
+    .topbar-inner { display: flex; justify-content: space-between; gap: 16px; padding: 9px 0; flex-wrap: wrap; }
+    .topbar span { display: inline-flex; align-items: center; gap: 8px; }
+    .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); display: inline-block; }
+    header { position: sticky; top: 0; z-index: 20; background: rgba(251,250,247,.94); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(20,36,58,.08); }
+    .nav { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .brand-mark { width: 50px; height: 50px; border-radius: 50%; display: grid; place-items: center; overflow: hidden; background: #fff; flex: 0 0 auto; }
+    .brand-mark img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .brand-name { color: var(--navy); font-size: .95rem; line-height: 1.2; font-weight: 800; letter-spacing: .045em; }
+    .brand-sub { color: #947747; display: block; font-size: .73rem; letter-spacing: .19em; margin-top: 4px; font-weight: 700; }
+    .nav-links { display: flex; align-items: center; gap: 27px; font-size: .93rem; color: #3e4b5d; }
+    .nav-links a:hover { color: #947747; }
+    .nav-cta, .btn { border: 0; border-radius: 10px; padding: 12px 18px; display: inline-flex; align-items: center; justify-content: center; gap: 9px; font-weight: 750; cursor: pointer; transition: transform .2s, background .2s, box-shadow .2s; }
+    .nav-cta, .btn-primary { color: var(--navy); background: var(--gold); }
+    .nav-cta:hover, .btn-primary:hover { background: #d4b77f; transform: translateY(-1px); }
+    .btn-secondary { background: transparent; border: 1px solid rgba(255,255,255,.4); color: white; }
+    .btn-secondary:hover { background: rgba(255,255,255,.08); }
+    .menu-toggle { display: none; border: 1px solid var(--line); background: white; color: var(--navy); border-radius: 10px; padding: 9px 12px; }
+    .hero { position: relative; overflow: hidden; background: var(--navy); color: white; }
+    .hero:before { content: ""; position: absolute; width: 580px; height: 580px; right: -130px; top: -260px; border: 1px solid rgba(198,166,107,.22); border-radius: 50%; box-shadow: 0 0 0 50px rgba(198,166,107,.035), 0 0 0 105px rgba(198,166,107,.025); }
+    .hero:after { content: ""; position: absolute; width: 310px; height: 310px; right: 8%; bottom: -230px; background: rgba(198,166,107,.08); border-radius: 50%; }
+    .hero-grid { min-height: 540px; display: grid; grid-template-columns: 1.2fr .8fr; align-items: center; gap: 60px; padding-top: 68px; padding-bottom: 72px; position: relative; z-index: 1; }
+    .eyebrow { display: flex; align-items: center; gap: 11px; text-transform: uppercase; letter-spacing: .17em; font-size: .76rem; font-weight: 800; color: var(--gold-light); }
+    .eyebrow:before { content: ""; width: 32px; height: 1px; background: var(--gold); }
+    h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.04; letter-spacing: -.045em; margin: 22px 0; max-width: 720px; }
+    h1 em { color: var(--gold-light); font-style: normal; }
+    .hero-copy { color: #d7e0eb; font-size: 1.1rem; max-width: 570px; margin: 0 0 30px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-note { color: #c4cedb; font-size: .88rem; margin-top: 24px; display: flex; gap: 10px; align-items: center; }
+    .hero-note svg { color: var(--gold); flex: 0 0 auto; }
+    .hero-panel { justify-self: end; width: min(100%, 355px); position: relative; }
+    .panel-frame { border: 1px solid rgba(198,166,107,.45); padding: 15px; border-radius: 22px; transform: rotate(2deg); }
+    .panel-inner { min-height: 335px; border-radius: 14px; padding: 32px 27px; background: linear-gradient(145deg, #213955, #17283e); display: flex; flex-direction: column; justify-content: space-between; }
+    .panel-symbol { width: 80px; height: 80px; border: 1px solid rgba(198,166,107,.6); border-radius: 50%; display: grid; place-items: center; color: var(--gold); margin: 4px auto 28px; }
+    .panel-symbol img { width: 100%; height: 100%; object-fit: contain; border-radius: 50%; }
+    .panel-quote { text-align: center; font-family: Georgia, serif; font-size: 1.48rem; line-height: 1.35; color: #f7f3eb; }
+    .panel-caption { text-align: center; font-size: .73rem; color: var(--gold-light); letter-spacing: .16em; text-transform: uppercase; margin-top: 20px; }
+    .trust-strip { background: white; border-bottom: 1px solid var(--line); }
+    .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .trust-item { padding: 23px 20px; display: flex; align-items: center; justify-content: center; gap: 12px; border-right: 1px solid var(--line); color: var(--navy); font-size: .93rem; font-weight: 700; }
+    .trust-item:last-child { border: 0; }
+    .trust-item svg { color: #a8884f; flex: 0 0 auto; }
+    section { padding: 88px 0; }
+    .section-heading { max-width: 680px; margin-bottom: 38px; }
+    .kicker { color: #987747; text-transform: uppercase; font-size: .75rem; letter-spacing: .17em; font-weight: 850; }
+    h2 { color: var(--navy); font-size: clamp(2rem, 3.3vw, 3rem); line-height: 1.12; letter-spacing: -.035em; margin: 12px 0 15px; }
+    .section-heading p { color: var(--muted); margin: 0; font-size: 1.04rem; }
+    .services { background: var(--paper); }
+    .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .service-card { background: white; border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 23px; min-height: 225px; display: flex; flex-direction: column; align-items: flex-start; transition: transform .2s, box-shadow .2s, border-color .2s; }
+    .service-card:hover { transform: translateY(-4px); border-color: #d6c29c; box-shadow: var(--shadow); }
+    .service-icon { width: 49px; height: 49px; border-radius: 14px; background: #f6f1e7; display: grid; place-items: center; color: #9b7b43; margin-bottom: 20px; }
+    .service-icon svg { width: 25px; height: 25px; }
+    .service-card h3 { color: var(--navy); font-size: 1.1rem; line-height: 1.3; margin: 0 0 9px; }
+    .service-card p { color: var(--muted); font-size: .91rem; margin: 0 0 20px; }
+    .text-link { margin-top: auto; color: #8a6a36; font-size: .9rem; font-weight: 800; }
+    .text-link:hover { text-decoration: underline; }
+    .about { background: #f0f2f5; }
+    .about-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 70px; align-items: center; }
+    .about-art { min-height: 380px; border-radius: 22px; background: var(--navy); padding: 30px; display: grid; place-items: center; overflow: hidden; position: relative; }
+    .about-art:before, .about-art:after { content: ""; position: absolute; border: 1px solid rgba(198,166,107,.4); border-radius: 50%; width: 310px; height: 310px; }
+    .about-art:after { width: 240px; height: 240px; }
+    .about-art img { position: relative; z-index: 1; width: min(78%, 290px); height: auto; border-radius: 50%; background: #fff; }
+    .about-copy p { color: var(--muted); }
+    .principles { display: grid; gap: 13px; margin: 25px 0 30px; }
+    .principle { display: flex; align-items: flex-start; gap: 12px; color: var(--navy); font-weight: 700; }
+    .check { background: #e5ecdf; color: #4c7445; width: 24px; height: 24px; display: grid; place-items: center; border-radius: 50%; flex: 0 0 auto; font-size: .8rem; }
+    .contact { background: white; }
+    .contact-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 70px; align-items: start; }
+    .contact-info { background: var(--navy); color: white; border-radius: 20px; padding: 32px; }
+    .contact-info h3 { font-size: 1.45rem; margin: 0 0 12px; }
+    .contact-info > p { color: #d4deea; font-size: .95rem; margin: 0 0 28px; }
+    .info-row { display: flex; gap: 13px; align-items: flex-start; margin: 21px 0; }
+    .info-icon { width: 40px; height: 40px; border-radius: 11px; background: rgba(198,166,107,.14); color: var(--gold-light); display: grid; place-items: center; flex: 0 0 auto; }
+    .info-label { font-size: .77rem; color: #b9c5d4; margin-bottom: 3px; }
+    .info-value { font-size: .97rem; color: white; font-weight: 650; }
+    .contact-info .btn { width: 100%; margin-top: 15px; }
+    .contact-form { border: 1px solid var(--line); border-radius: 20px; padding: 32px; box-shadow: 0 8px 30px rgba(20,36,58,.04); }
+    .contact-form h3 { color: var(--navy); font-size: 1.5rem; margin: 0 0 7px; }
+    .form-intro { color: var(--muted); font-size: .93rem; margin: 0 0 24px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; }
+    .field { display: flex; flex-direction: column; gap: 7px; }
+    .field.full { grid-column: 1 / -1; }
+    label { color: #334156; font-size: .86rem; font-weight: 750; }
+    input, select, textarea { width: 100%; border: 1px solid #d9dee6; background: #fff; color: var(--ink); padding: 12px 13px; border-radius: 9px; outline: none; transition: border-color .2s, box-shadow .2s; }
+    input:focus, select:focus, textarea:focus { border-color: #b39258; box-shadow: 0 0 0 3px rgba(198,166,107,.16); }
+    textarea { min-height: 125px; resize: vertical; }
+    .privacy-note { font-size: .78rem; color: var(--muted); margin: 14px 0 19px; }
+    .contact-form .btn { width: 100%; }
+    .form-status { margin-top: 13px; font-size: .9rem; color: var(--green); display: none; }
+    .faq { background: #f0f2f5; }
+    .faq-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 65px; }
+    .faq-list { display: grid; gap: 11px; }
+    details { background: white; border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; }
+    summary { color: var(--navy); cursor: pointer; font-weight: 750; }
+    details p { color: var(--muted); font-size: .93rem; margin: 12px 0 0; }
+    .final-cta { background: var(--navy); color: white; padding: 58px 0; }
+    .final-cta-inner { display: flex; justify-content: space-between; align-items: center; gap: 28px; }
+    .final-cta h2 { color: white; margin: 0 0 8px; font-size: clamp(1.8rem, 3vw, 2.6rem); }
+    .final-cta p { margin: 0; color: #d4deea; }
+    footer { background: #0e1a2a; color: #c6d0dd; padding: 27px 0; font-size: .83rem; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .footer-brand { color: white; font-weight: 800; letter-spacing: .04em; }
+    .footer-disclaimer { width: 100%; color: #9eabba; font-size: .75rem; border-top: 1px solid rgba(255,255,255,.1); padding-top: 17px; margin-top: 8px; }
+    .wa-float { position: fixed; z-index: 30; bottom: 22px; right: 22px; width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center; background: #20b76a; color: white; box-shadow: 0 9px 25px rgba(18,100,60,.32); transition: transform .2s; }
+    .wa-float:hover { transform: translateY(-3px) scale(1.03); }
+    .wa-float svg { width: 29px; height: 29px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    @media (max-width: 900px) {
+      .nav-links { gap: 16px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .hero-grid { grid-template-columns: 1fr .7fr; gap: 28px; }
+      .panel-inner { min-height: 300px; padding: 25px 18px; }
+      .panel-quote { font-size: 1.25rem; }
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid, .contact-grid, .faq-grid { gap: 35px; }
+    }
+    @media (max-width: 650px) {
+      .container { width: min(100% - 30px, 1120px); }
+      .topbar-inner { justify-content: center; text-align: center; font-size: .79rem; }
+      .nav { min-height: 72px; }
+      .brand-mark { width: 40px; height: 40px; }
+      .brand-name { font-size: .82rem; }
+      .brand-sub { font-size: .65rem; }
+      .nav-links { display: none; }
+      .menu-toggle { display: inline-flex; }
+      .mobile-menu { display: none; padding: 0 0 15px; }
+      .mobile-menu.open { display: grid; gap: 0; }
+      .mobile-menu a { padding: 12px 4px; border-top: 1px solid var(--line); color: var(--navy); font-weight: 650; }
+      .hero-grid { display: block; padding-top: 58px; padding-bottom: 55px; min-height: auto; }
+      h1 { font-size: clamp(2.45rem, 12vw, 3.55rem); }
+      .hero-copy { font-size: 1rem; }
+      .hero-panel { display: none; }
+      .trust-grid { grid-template-columns: 1fr; padding: 5px 0; }
+      .trust-item { justify-content: flex-start; padding: 13px 4px; border-right: 0; border-bottom: 1px solid var(--line); }
+      .trust-item:last-child { border-bottom: 0; }
+      section { padding: 63px 0; }
+      .section-heading { margin-bottom: 28px; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: auto; }
+      .about-grid, .contact-grid, .faq-grid { grid-template-columns: 1fr; gap: 27px; }
+      .about-art { min-height: 250px; }
+      .contact-info, .contact-form { padding: 24px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+      .final-cta-inner { align-items: flex-start; flex-direction: column; }
+      .final-cta .btn { width: 100%; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+      .wa-float { right: 16px; bottom: 16px; width: 54px; height: 54px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span><i class="dot"></i> Atención de lunes a viernes</span>
+      <span>Horario: 08:00 a 13:30</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Estudio Jurídico Integral AA, inicio">
+        <span class="brand-mark" aria-hidden="true"><img src="logo-aa.png" alt=""></span>
+        <span><span class="brand-name">ESTUDIO JURÍDICO</span><span class="brand-sub">INTEGRAL AA</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="#servicios">Áreas legales</a>
+        <a href="#estudio">El estudio</a>
+        <a href="#preguntas">Preguntas frecuentes</a>
+        <a class="nav-cta" href="#contacto">Solicitar consulta <span aria-hidden="true">↗</span></a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu">Menú ☰</button>
+    </div>
+    <nav class="container mobile-menu" id="mobileMenu" aria-label="Navegación móvil">
+      <a href="#servicios">Áreas legales</a>
+      <a href="#estudio">El estudio</a>
+      <a href="#preguntas">Preguntas frecuentes</a>
+      <a href="#contacto">Solicitar consulta</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Asesoramiento jurídico integral</div>
+          <h1>Orientación legal para tomar <em>decisiones con confianza.</em></h1>
+          <p class="hero-copy">Conocé nuestras áreas de práctica y contactanos para conversar sobre tu situación. Te orientaremos sobre los próximos pasos para realizar tu consulta.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contacto">Solicitar una consulta <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-secondary" data-wa-link href="#" target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>
+          </div>
+          <div class="hero-note">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            Lunes a viernes · 08:00 a 13:30
+          </div>
+        </div>
+        <div class="hero-panel" aria-hidden="true">
+          <div class="panel-frame"><div class="panel-inner">
+            <div>
+              <div class="panel-symbol" style="overflow:hidden; border:0; width:112px; height:112px; background:#fff; margin-top:0"><img src="logo-aa.png" alt="Logo del Estudio Jurídico Integral AA"></div>
+              <div class="panel-quote">“Cada situación merece ser escuchada con seriedad.”</div>
+            </div>
+            <div class="panel-caption">Estudio Jurídico Integral AA</div>
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      <div class="container trust-grid">
+        <div class="trust-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3 20 6v5c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-3Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg> Atención personalizada</div>
+        <div class="trust-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20h16M6 20V9l6-5 6 5v11M9 12h6M9 15h6"/></svg> Distintas áreas del derecho</div>
+        <div class="trust-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v18M4 7h16M7 7 3 15h8L7 7Zm10 0-4 8h8l-4-8ZM8 21h8"/></svg> Comunicación clara y directa</div>
+      </div>
+    </div>
+
+    <section class="services" id="servicios">
+      <div class="container">
+        <div class="section-heading">
+          <div class="kicker">Áreas de práctica</div>
+          <h2>¿En qué podemos orientarte?</h2>
+          <p>Seleccioná el área relacionada con tu consulta y escribinos para contarnos brevemente qué necesitás.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18M10 12v2h4v-2"/></svg></div>
+            <h3>Derecho laboral</h3>
+            <p>Orientación en consultas y situaciones vinculadas con las relaciones de trabajo.</p>
+            <a class="text-link" href="#contacto" data-area="Derecho laboral">Consultar esta área ↗</a>
+          </article>
+          <article class="service-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM20 8v6M17 11h6"/></svg></div>
+            <h3>Derecho familiar</h3>
+            <p>Asesoramiento en asuntos legales relacionados con el ámbito familiar.</p>
+            <a class="text-link" href="#contacto" data-area="Derecho familiar">Consultar esta área ↗</a>
+          </article>
+          <article class="service-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 20 6v5c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-3Z"/><path d="M12 8v5M12 16h.01"/></svg></div>
+            <h3>Derecho penal</h3>
+            <p>Consultas y orientación legal ante situaciones vinculadas con el ámbito penal.</p>
+            <a class="text-link" href="#contacto" data-area="Derecho penal">Consultar esta área ↗</a>
+          </article>
+          <article class="service-card">
+            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 11h2M9 15h2M14 11h2M14 15h2"/></svg></div>
+            <h3>Derecho civil y comercial</h3>
+            <p>Orientación sobre cuestiones civiles, contratos y relaciones comerciales.</p>
+            <a class="text-link" href="#contacto" data-area="Derecho civil y comercial">Consultar esta área ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="estudio">
+      <div class="container about-grid">
+        <div class="about-art" aria-hidden="true"><img src="logo-aa.png" alt=""></div>
+        <div class="about-copy">
+          <div class="kicker">Estudio Jurídico Integral AA</div>
+          <h2>Un espacio para plantear tu consulta con claridad.</h2>
+          <p><strong>Profesional:</strong> Dra. Ana Gisela Aristimuño.</p>
+          <p>Sabemos que iniciar una consulta legal puede generar dudas. Por eso, esta página busca ayudarte a identificar el área correspondiente y acercarte un canal de contacto directo con el estudio.</p>
+          <div class="principles">
+            <div class="principle"><span class="check">✓</span><span>Información clara sobre las áreas de práctica.</span></div>
+            <div class="principle"><span class="check">✓</span><span>Contacto directo por WhatsApp o formulario.</span></div>
+            <div class="principle"><span class="check">✓</span><span>Horario de atención informado desde el inicio.</span></div>
+          </div>
+          <a class="btn btn-primary" href="#contacto">Ponerte en contacto <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <div class="container">
+        <div class="section-heading">
+          <div class="kicker">Contacto</div>
+          <h2>Contanos cómo podemos ayudarte.</h2>
+          <p>Completá el formulario y se abrirá WhatsApp con tu mensaje listo para enviar al estudio. También podés escribirnos directamente.</p>
+        </div>
+        <div class="contact-grid">
+          <aside class="contact-info">
+            <h3>Hablemos de tu consulta</h3>
+            <p>Elegí el canal que te resulte más cómodo. La atención del estudio es de lunes a viernes, de 08:00 a 13:30.</p>
+            <div class="info-row">
+              <span class="info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 11.2 19a19.4 19.4 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.5 3a2 2 0 0 1-.6 1.9L7.1 10.5a16 16 0 0 0 6 6l1.9-1.9a2 2 0 0 1 1.9-.6l3 .5a2 2 0 0 1 2.1 2.4Z"/></svg></span>
+              <div><div class="info-label">WhatsApp</div><div class="info-value">+54 9 11 4149-0847</div></div>
+            </div>
+            <div class="info-row">
+              <span class="info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+              <div><div class="info-label">Horario de atención</div><div class="info-value">Lunes a viernes<br>08:00 a 13:30</div></div>
+            </div>
+            <div class="info-row">
+              <span class="info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></span>
+              <div><div class="info-label">Correo electrónico</div><div class="info-value"><a href="mailto:info.estudiojuridicoaa@gmail.com">info.estudiojuridicoaa@gmail.com</a></div></div>
+            </div>
+            <div class="info-row">
+              <span class="info-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+              <div><div class="info-label">Ubicación</div><div class="info-value">A confirmar</div></div>
+            </div>
+            <a class="btn btn-primary" data-wa-link href="#" target="_blank" rel="noopener noreferrer">Abrir WhatsApp ↗</a>
+          </aside>
+
+          <form class="contact-form" id="consultForm">
+            <h3>Formulario de consulta</h3>
+            <p class="form-intro">Completá tus datos. No incluyas información confidencial ni documentación sensible en este primer mensaje.</p>
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">Nombre y apellido *</label>
+                <input id="name" name="name" autocomplete="name" required maxlength="100" placeholder="Tu nombre">
+              </div>
+              <div class="field">
+                <label for="phone">Teléfono de contacto *</label>
+                <input id="phone" name="phone" autocomplete="tel" required maxlength="40" placeholder="Tu teléfono">
+              </div>
+              <div class="field full">
+                <label for="area">Área legal *</label>
+                <select id="area" name="area" required>
+                  <option value="">Seleccioná un área</option>
+                  <option>Derecho laboral</option>
+                  <option>Derecho familiar</option>
+                  <option>Derecho penal</option>
+                  <option>Derecho civil y comercial</option>
+                  <option>No estoy seguro/a</option>
+                </select>
+              </div>
+              <div class="field full">
+                <label for="message">Breve descripción de tu consulta *</label>
+                <textarea id="message" name="message" required maxlength="1500" placeholder="Contanos brevemente el motivo de tu consulta, sin incluir datos sensibles..."></textarea>
+              </div>
+            </div>
+            <p class="privacy-note">Cuando termines de completar los datos, tocá el botón de abajo. Se abrirá WhatsApp con tu consulta lista para enviar. No guardamos tus datos en esta página.</p>
+            <button class="btn btn-primary" type="submit">Enviar consulta por WhatsApp ↗</button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="preguntas">
+      <div class="container faq-grid">
+        <div class="section-heading">
+          <div class="kicker">Información útil</div>
+          <h2>Antes de contactarnos</h2>
+          <p>Algunas respuestas para ayudarte a dar el primer paso.</p>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>¿Cómo puedo hacer una consulta?</summary>
+            <p>Podés escribir por WhatsApp o completar el formulario. Al completar el formulario y tocar “Enviar consulta por WhatsApp”, se abrirá WhatsApp con tu mensaje listo para enviar.</p>
+          </details>
+          <details>
+            <summary>¿Cuál es el horario de atención?</summary>
+            <p>El horario informado por el estudio es de lunes a viernes, de 08:00 a 13:30.</p>
+          </details>
+          <details>
+            <summary>¿Qué información conviene enviar?</summary>
+            <p>Para el primer contacto, alcanza con indicar tu nombre, un medio de contacto, el área legal y una descripción general. Evitá enviar documentación sensible hasta que el estudio te indique un canal adecuado.</p>
+          </details>
+          <details>
+            <summary>¿Enviar el formulario significa que ya tengo asesoramiento legal?</summary>
+            <p>No. El mensaje es una solicitud de contacto. La recepción de una consulta no confirma por sí sola la aceptación del caso ni establece una relación profesional.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container final-cta-inner">
+        <div>
+          <h2>¿Tenés una consulta legal?</h2>
+          <p>Contactá al Estudio Jurídico Integral AA por WhatsApp.</p>
+        </div>
+        <a class="btn btn-primary" data-wa-link href="#" target="_blank" rel="noopener noreferrer">Escribir por WhatsApp ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand">ESTUDIO JURÍDICO INTEGRAL AA</div>
+      <div>Atención: lunes a viernes · 08:00 a 13:30</div>
+      <div class="footer-disclaimer">La información de este sitio es general y no constituye asesoramiento jurídico ni garantiza resultados. La consulta inicial no implica aceptación del caso. Antes de publicar, el estudio debe revisar los textos y completar los datos profesionales y legales que correspondan.</div>
+      <div>© <span id="year"></span> Estudio Jurídico Integral AA. Todos los derechos reservados.</div>
+    </div>
+  </footer>
+
+  <a class="wa-float" data-wa-link href="#" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-4.8A8.4 8.4 0 1 1 20.5 11.5Z"/><path d="M8.7 8.2c.2-.5.4-.5.7-.5h.5c.2 0 .4.1.5.4l.7 1.6c.1.2.1.4-.1.6l-.5.6c-.2.2-.2.4 0 .6.5.8 1.2 1.5 2.1 2 .2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.4.5 0 .3-.2 1.1-.7 1.5-.5.5-1.2.7-1.9.5-1.1-.3-2.4-.9-3.6-2.1-1.2-1.1-2-2.5-2.2-3.4-.2-.7 0-1.4.5-1.9Z"/></svg>
+  </a>
+
+  <script>
+    // WhatsApp en formato internacional sin espacios ni signos.
+    const WHATSAPP_NUMBER = "5491141490847";
+    const DEFAULT_MESSAGE = "Hola, quisiera hacer una consulta al Estudio Jurídico Integral AA.";
+    const whatsappUrl = (message = DEFAULT_MESSAGE) =>
+      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+    document.querySelectorAll("[data-wa-link]").forEach(link => {
+      link.href = whatsappUrl();
+    });
+
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.textContent = isOpen ? "Cerrar ✕" : "Menú ☰";
+    });
+    mobileMenu.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+      mobileMenu.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.textContent = "Menú ☰";
+    }));
+
+    document.querySelectorAll("[data-area]").forEach(link => {
+      link.addEventListener("click", () => {
+        const area = link.dataset.area;
+        document.getElementById("area").value = area;
+      });
+    });
+
+    document.getElementById("consultForm").addEventListener("submit", event => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      if (!form.reportValidity()) return;
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const area = document.getElementById("area").value;
+      const message = document.getElementById("message").value.trim();
+
+      const text = [
+        "Hola, Estudio Jurídico Integral AA. Quisiera realizar una consulta.",
+        "",
+        `Nombre: ${name}`,
+        `Teléfono: ${phone}`,
+        `Área legal: ${area}`,
+        `Consulta: ${message}`,
+        "",
+        "Entiendo que este mensaje es una solicitud de contacto."
+      ].join("\n");
+
+      document.getElementById("formStatus").textContent =
+        "Abriendo WhatsApp con tu consulta… Si no se abre, revisá que WhatsApp esté instalado o probá desde otro navegador.";
+      document.getElementById("formStatus").style.display = "block";
+      window.location.assign(whatsappUrl(text));
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
